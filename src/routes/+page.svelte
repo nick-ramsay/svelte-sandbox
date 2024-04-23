@@ -27,7 +27,6 @@
 <svelte:head>
 	<title>Home</title>
 	<meta name="description" content="Svelte demo app" />
-	<link href="./styles.css" />
 </svelte:head>
 
 <section>
