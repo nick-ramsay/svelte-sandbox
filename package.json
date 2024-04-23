@@ -22,6 +22,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@datadog/browser-rum": "^5.15.0"
+		"@datadog/browser-rum": "^5.15.0",
+		"@sveltejs/adapter-node": "^5.0.1"
 	}
 }
