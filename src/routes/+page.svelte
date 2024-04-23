@@ -1,12 +1,33 @@
-<script>
+<script lang="ts">
 	import Counter from './Counter.svelte';
 	import welcome from '$lib/images/svelte-welcome.webp';
 	import welcome_fallback from '$lib/images/svelte-welcome.png';
+
+	import { datadogRum } from '@datadog/browser-rum';
+
+	datadogRum.init({
+    	applicationId: 'bfb434f5-4dcf-4fa4-9a84-f7e622c6be78',
+    	clientToken: 'pub067ef0f19bdd42b4b15c7e3a1f89d1f4',
+    	// `site` refers to the Datadog site parameter of your organization
+    	// see https://docs.datadoghq.com/getting_started/site/
+    	site: 'datadoghq.com',
+    	service: 'svelte-sandbox',
+    	env: 'staging',
+    	// Specify a version number to identify the deployed version of your application in Datadog
+    	// version: '1.0.0', 
+    	sessionSampleRate: 100,
+    	sessionReplaySampleRate: 100,
+    	trackUserInteractions: true,
+    	trackResources: true,
+    	trackLongTasks: true,
+    	defaultPrivacyLevel: 'mask-user-input',
+});
 </script>
 
 <svelte:head>
 	<title>Home</title>
 	<meta name="description" content="Svelte demo app" />
+	<link href="./styles.css" />
 </svelte:head>
 
 <section>
@@ -27,7 +48,6 @@
 
 	<Counter />
 </section>
-
 <style>
 	section {
 		display: flex;
